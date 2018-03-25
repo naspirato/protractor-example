@@ -1,0 +1,19 @@
+// Plugins to install:
+// - flow
+// - eslint
+// - npm
+// - GitLense
+// - NPM-Scritps
+{
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/www": true
+    },
+    "editor.tabSize": 2,
+    "eslint.enable": true,
+    "jest.pathToConfig": "./jest.json",
+    "javascript.validate.enable": false,
+    "flow.enabled": true,
+    "flow.useNPMPackagedFlow": true,
+    "npm-intellisense.importES6": true,
+}

@@ -6,13 +6,14 @@
     "node": "8.1.3"
   },
   "scripts": {
-    "prepare": "node_modules/.bin/webdriver-manager update",
+    "prepare": "node_modules/.bin/webdriver-manager start",
     "update": "node_modules/.bin/webdriver-manager update",
-    "test": "./flake conf.js"
+    "test": "protractor sauceConf.js",
+    "posttest": "allure generate allure-results --clean -o allure-report  & allure serve ./allure-results/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/qualityshepherd/protractor_example.git"
+    "url": "https://github.com/naspirato/protractor-example.git"
   },
   "keywords": [
     "protractor",
@@ -24,9 +25,9 @@
   "author": "Brine",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/qualityshepherd/protractor_example/issues"
+    "url": "https://github.com/naspirato/protractor-example/issues"
   },
-  "homepage": "https://github.com/qualityshepherd/protractor_example",
+  "homepage": "https://github.com/naspirato/protractor-example",
   "dependencies": {
     "protractor": "5.1.2",
     "selenium-standalone": "^6.5.0",
@@ -35,7 +36,10 @@
     "protractor-flake": "3.0.1"
   },
   "devDependencies": {
+    "allure-commandline": "^2.5.0",
     "babel-preset-es2015": "^6.24.1",
-    "babel-register": "^6.24.1"
+    "babel-register": "^6.24.1",
+    "jasmine-allure-reporter": "^1.0.2",
+    "mssql": "^4.1.0"
   }
 }

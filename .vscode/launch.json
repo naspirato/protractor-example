@@ -1,0 +1,43 @@
+{
+    // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
+    // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
+    // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      
+      {
+        "name": "Debug Jest Tests",
+        "type": "node",
+        "request": "launch",
+        "runtimeArgs": [ 
+          "--inspect-brk",
+          "${workspaceRoot}/node_modules/.bin/jest",
+          "--runInBand",
+          "--forceExit",
+          "--no-cache",
+          "--verbose",
+          "${file}"
+
+        ],
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen",
+        "outFiles": ["${workspaceRoot}/test/temp/*.js"],
+       "timeout": 10000
+      },
+      {
+          "type": "node",
+          "request": "launch",
+          "name": "Launch JS Program",
+          "program": "${file}"
+      },
+      {
+        "name": "Launch protr",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+        "console": "integratedTerminal",
+        "args": ["${workspaceRoot}/protractor.conf.js"]
+       
+      }
+    ]
+}

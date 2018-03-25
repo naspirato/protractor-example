@@ -18,24 +18,25 @@ exports.config = {
 
     onPrepare: function(){
 
+        var AllureReporter = require('jasmine-allure-reporter');
+        jasmine.getEnv().addReporter(new AllureReporter({
+          resultsDir: 'allure-results'
+        }));
     },
 
     multiCapabilities: [{
-        'browserName': 'internet explorer',
-        'platform': 'Windows 8.1',
-        'version': '11',
-        'name': 'Win8.1/IE11...'
+        'browserName' : 'chrome'
     }, {
-        'browserName': 'firefox',
+      /*   'browserName': 'firefox',
         'platform': 'Linux',
         'version': '45',
-        'name': 'Linux/Firefox...'
+        'name': 'Linux/Firefox...' */
     }],
 
     jasmineNodeOpts: {
         isVerbose: true,
         includeStackTrace: true,
-        showColors: true,
+        showColors: false,
         defaultTimeoutInterval: 30000
     }
 };

@@ -1,0 +1,8 @@
+{
+"MSSql":{
+  "dbserver" : "localhost", 
+    "dbname" : "addressbook",    
+    "dbuser" : "root" , 
+    "dbpass"  :""  
+  }
+}
